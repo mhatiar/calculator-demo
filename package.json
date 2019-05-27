@@ -1,0 +1,23 @@
+{
+  "name": "calculator-demo",
+  "version": "0.0.1",
+  "author": "Marek Hatiar",
+  "description": "A demo app with TestCafe tests",
+  "scripts": {
+    "start": "node app/expressserver.js",
+    "test": "testcafe ie test/functionalTestsCalculator.js",
+    "ci": "start-server-and-test http://localhost:3456"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "testcafe-angular-selectors": "latest"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "start-server-and-test": "^1.7.11",
+    "testcafe": "^1.0.1"
+  }
+}
