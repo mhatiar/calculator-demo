@@ -37,3 +37,29 @@ test('Substract test with Ionic Frames', async t => {
         .click('#gobutton')
 		.expect(AngularJSSelector.byBinding('latest').innerText).eql('6');
 });
+
+test('Multiply test with Ionic Frames', async t => {
+    await t
+        .typeText(AngularJSSelector.byModel('first'), '50')
+		.expect(AngularJSSelector.byModel('operator').exists).ok()
+		.expect(AngularJSSelector.byOptions('value for (key, value) in operators').exists).ok()
+		.click(AngularJSSelector.byModel('operator'))
+		.click(Selector('option').filter('[value="MULTIPLICATION"]'))
+		.expect(AngularJSSelector.byModel('operator').value).eql('MULTIPLICATION')
+		.typeText(AngularJSSelector.byModel('second'), '2')
+        .click('#gobutton')
+		.expect(AngularJSSelector.byBinding('latest').innerText).eql('100');
+});
+
+test('Devision test with Ionic Frames', async t => {
+    await t
+        .typeText(AngularJSSelector.byModel('first'), '50')
+		.expect(AngularJSSelector.byModel('operator').exists).ok()
+		.expect(AngularJSSelector.byOptions('value for (key, value) in operators').exists).ok()
+		.click(AngularJSSelector.byModel('operator'))
+		.click(Selector('option').filter('[value="DEVISION"]'))
+		.expect(AngularJSSelector.byModel('operator').value).eql('DEVISION')
+		.typeText(AngularJSSelector.byModel('second'), '2')
+        .click('#gobutton')
+		.expect(AngularJSSelector.byBinding('latest').innerText).eql('25');
+});
