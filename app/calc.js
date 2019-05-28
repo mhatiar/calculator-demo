@@ -4,6 +4,8 @@ var CalcCtrl = function($timeout, $scope) {
   $scope.operators = {
     ADDITION: '+',
     SUBTRACTION: '-',
+    MULTIPLICATION: '*',
+    DEVISION: '/'
   };
   $scope.operator = $scope.operators.ADDITION;
 
@@ -21,6 +23,12 @@ var CalcCtrl = function($timeout, $scope) {
             break;
           case '-':
             latestResult = first - second;
+            break;
+          case '*':
+            latestResult = first * second;
+            break;
+          case '/':
+            latestResult = first / second;
             break;
         }
         $scope.memory.unshift({
